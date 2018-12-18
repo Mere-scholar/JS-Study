@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>去除字符串中的空格</title>
+</head>
+<body>
+    <script>
+        
+        let str = '   学习 正则  表达式    ';
+        console.log(str.replace(/^\s+|\s+$/g,'') ); //去除首尾的空格
+        console.log(str.replace(/\s+/g , ''));      //去除字符串中的所有空格
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>手机号相关的验证</title>
+</head>
+<body>
+    <script>
+        // let str = '15518884555';
+        // 1  3578 9
+        // 验证手机号
+        let reg = /1[3578]\d{9}/;
+        // alert(reg.test('122638078852'));
+
+        // 将输入的手机号替换成*号
+        let strNum = '姓名：张三    手机号：15638078852 性别：男'
+        console.log("您的手机号是：" + strNum.replace(reg,'***'));
+    </script>
+    
+</body>
+</html>

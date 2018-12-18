@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <a href="http://www.baidu.com">百度一下</a>
+    <form method="get" id="getData">
+        <input type="text" name="name">
+        <input type="submit">
+    </form>
+    <script>
+        document.querySelector('#getData').addEventListener('submit' , fun);
+        function fun(event){
+            event.preventDefault();
+        }
+        document.querySelector('#getData').onclick = function(event){
+            // 万能的阻止一些默认行为
+            // event.preventDefault();
+            // return false;
+        }
+    </script>
+</body>
+</html>

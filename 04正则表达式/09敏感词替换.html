@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>敏感词替换</title>
+</head>
+<body>
+    <script>
+        let str = '七七茜茜小笨蛋';
+       // let r = str.replace(/茜茜/g,'*');
+        let r = str.replace(/茜|七/g,(w)=>{
+            let r = '';
+            for(let i = 0;i<w.length;i++){
+                r += '*'
+            }
+            return r;
+        });
+        console.log(r);    
+        
+    </script>
+</body>
+</html>

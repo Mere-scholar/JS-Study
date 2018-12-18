@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+	var str='addddfffssdfsadssdffsafjsd';
+	function searchMaxValue (str) {
+		// 定义一个对象来接受对象的属性值
+		var json = {}
+		for(var i = 0;i<str.length;i++){
+			if(!json[str.charAt(i)]){
+				json[str.charAt(i)] = 1;
+			}else{
+				json[str.charAt(i)]++;
+			}
+		}
+		var start = 0; //初始比较的值,
+		var val = ''; //用来接收对象中的属性
+		// 因为出现的个数可能相同,所以用对象进行接收
+		var start_1 , val_1;
+		var obj = {};
+		for(const value in json){
+			console.log(json[value] + "值");	//获取对象中属性的值
+			console.log(value);			//获取对象中的属性
+			if(json[value]>start){		//将对象中的属性值与初始值进行比较
+				start = json[value];	//将对象中的属性值赋给初始值
+				val = value;			//将对象中的属性赋给val
+			}else if(json[value] == start){	//另外出现最多的数
+				start_1 = json[value];
+				val_1 = value;
+				obj[val_1] = start_1;
+			}
+		}
+		obj[val] = start;
+		return obj;
+	}
+			var obj1 = searchMaxValue(str);
+			for(const value in obj1){
+				console.log("出现最多的字符是"+value+","+"一共出现了"+obj1[value]+"次");
+			}
+		</script>
+	</body>
+</html>

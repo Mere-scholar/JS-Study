@@ -1,0 +1,5 @@
+call与apply———>改变this指向
+区别：
+	call需要将实参按照形参的个数传进去
+	applay需要传一个arguments
+	

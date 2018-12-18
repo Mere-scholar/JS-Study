@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>千位分隔符</title>
+</head>
+<body>
+    <script>
+    
+        let str = '1245789413431654';
+        let r = str.replace(/(\d)(?=(?:\d{3})+$)/g,'$1,');
+        console.log(r);
+        // 解释，从左往右
+        // 找一个数字，从尾部开始，必须等于三位字符，且不要保存捕获元素，全局搜索，替换成为 "\,"
+        // 因为replace中的第二个元素中如果使用 "\",话必须要使用"$"
+    </script>
+</body>
+</html>

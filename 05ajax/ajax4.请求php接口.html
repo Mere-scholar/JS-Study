@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>获取php中的数据</title>
+</head>
+
+<body>
+    <button class="btn">获取php的数据</button>
+    <h1>正常的将from表单中的内容提交到php中 --GET方式</h1>
+    <form action="php.php" method="get">
+        <input type="text" name="name">
+        <input type="submit" value="提交数据">
+    </form>
+    <h1>正常的将from表单中的内容提交到php中 --POST方式</h1>
+    <form action="php.php" method="POST">
+        <input type="text" name="name">
+        <input type="submit" value="提交数据">
+    </form>
+    <h1>AJAX的方式接受数据输入的值--GET</h1>
+    <form id="getValue">
+        <input type="text" name="name" id="name1">
+        <input type="submit" value="提交数据">
+    </form>
+    <h1>AJAX的方式接受数据输入的值--POST</h1>
+    <form id="postValue">
+        <input type="text" name="name" id="name2">
+        <input type="submit" value="提交数据">
+    </form>
+    <script>
+        // 最简单的拿去php中的文件
+        document.querySelector('.btn').addEventListener('click', getData);
+
+        function getData() {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GHT', 'php.php', true);
+            xhr.onload = function () {
+                console.log(this.responseText);
+            }
+            xhr.send();
+        }
+        // 使用AJAX将表单中的值传到php中去,页面的url地址栏不会放生改变,但是数据已经发送出去
+        // GET方法
+        document.querySelector('#getValue').addEventListener('submit', getValue);
+
+        function getValue(event) {
+            event.preventDefault(); //阻止form表单的自身事件
+            //获取用户输入的值
+            var inputValue = document.querySelector('#name1').value;
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', 'php.php?name=' + inputValue, true);
+            xhr.onload = function () {
+                console.log(this.responseText);
+            }
+            xhr.send();
+        }
+        // POST方法
+        document.querySelector('#postValue').addEventListener('submit', postValue);
+
+        function postValue(event) {
+            event.preventDefault();
+            var inputValue = document.querySelector('#name2').value;
+            var parpms = "name=" + inputValue;
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'php.php', true);
+            // post方法需要添加响应头
+            xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            xhr.onload = function () {
+                console.log(this.responseText);
+            }
+            // 因为post传输数据的时候需要使用密文的方式进行传输,所以通过send的方式发送出去
+            xhr.send(parpms);
+        }
+    </script>
+</body>
+
+</html>

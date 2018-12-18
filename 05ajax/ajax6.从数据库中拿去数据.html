@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ajax - 2 请求php数据</title>
+</head>
+<body>
+    <button class="btn2">ajax请求多个数据</button>
+    <h1>请求php数据</h1>
+    <div class="getJsons"></div>
+    <script> 
+        document.querySelector('.btn2').addEventListener("click" , getJsonValues);
+        function getJsonValues(){
+            //创建一个xml对象
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET' ,'users.php' , true);
+            xhr.onload = function(){
+                var users = JSON.parse(this.responseText);
+                if(this.status == 200){
+                    var data = '';
+                    for (const i in users) {
+                        data += `<ul><li>${users[i].name}</li><li>${users[i].age}</li><li>${users[i].id}</li></ul>`;
+                    }
+                }
+                document.querySelector('.getJsons').innerHTML = data;
+            }
+            xhr.send();
+        }
+    </script>
+</body>
+</html>

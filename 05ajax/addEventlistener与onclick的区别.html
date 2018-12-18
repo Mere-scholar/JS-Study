@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>addEventlistener与onclick的区别</title>
+</head>
+<body>
+    <button class="btn1">onclick点击</button>
+    <div onclick="cli()">
+            <div>
+                    div元素
+                    <button class="btn2">addEventlistener点击</button>
+                </div>
+    </div>
+    
+    
+</body>
+<script>
+    document.querySelector(".btn1").onclick=function(){
+        console.log("onclick第一次");
+    }
+    document.querySelector(".btn1").onclick=function(){
+        console.log("onclick第二次");
+    }
+
+    document.querySelector('div').addEventListener('click' ,fun,true);
+    document.querySelector('.btn2').addEventListener('click' ,fun1);
+    // document.querySelector('.btn2').addEventListener('click' ,fun2);
+    function fun(){
+        console.log("div元素")
+    }
+    function fun1(){
+        console.log("addEventListener第1次");
+    }
+    function fun2(){
+        console.log("addEventListener第2次");
+    }
+    function cli(){
+        console.log("aaaaa");
+
+    }
+</script>
+</html>

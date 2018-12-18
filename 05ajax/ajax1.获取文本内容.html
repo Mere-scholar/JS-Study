@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ajax - 1 获取纯文本数据/ajax的两种请求方式</title>
+</head>
+<body>
+    <button>获取纯文本数据</button>
+    <div></div>
+</body>
+<script>
+    document.querySelector('button').addEventListener('click' , getText);
+    
+    function getText(){
+        //创建一个XMLHttpResquest对象
+        var xhr = new XMLHttpRequest();
+        // console.log(xhr);
+        // open(type,url/filename,async) 参数的类型,请求的路径，是否进行异步操作
+        xhr.open('GET' , 'text.text' , true);
+        // 两种请求方式 onload / onreadystatechange
+        // xhr.onload = function(){
+        //     // console.log(this.responseText)
+        //     document.querySelector('div').innerHTML = this.responseText;
+        // }
+        // onreadystatechange响应了两次
+        // console.log("READYSTATE: " , xhr.readyState);
+        // xhr.onreadystatechange = function(){
+        //     // console.log("READYSTATE: " , xhr.readyState);
+        //     // console.log(this.responseText);
+        //     if (this.status == 200 && this.readyState == 4) {
+        //         document.querySelector('div').innerHTML = this.responseText;
+        //     } else if(this.status == 400) {
+        //         document.querySelector('div').innerHTML = "NO Found";
+        //     }
+        // }
+        xhr.onprogress = function(){
+            console.log("监听readyState状态码为3")
+        }
+        // 发送请求
+        xhr.send();
+        // onload的请求状态为:4
+        // onprogress 能够监听到readyState的状态为:3
+        //onreadystatechange能够监听到readyState的所有状态的状态码
+        // readyStata的状态码
+            // 0：请求未初始化
+            // 1：服务器链接已建立
+            // 2：请求已接受
+            // 3: 请求处理中
+            // 4: 请求已完成,且相应就绪
+    }
+</script>
+</html>

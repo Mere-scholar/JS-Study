@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var golobl = 12;
+			function a () {
+				c = 5;
+				golobl = 15;
+				console.log(golobl);
+			}
+			function b () {
+				console.log(golobl);
+				console.log(c);
+			}
+			// 根据动物返回叫声
+			function animal (a) {
+				if(a=='狗'){
+					console.log("汪汪汪");
+				}else if(a=='猫'){
+					console.log("喵喵喵")
+				}
+			}
+			// 写一个函数实现加法计数器
+			function sum () {
+				var result = 0;
+				for(const value of arguments){
+					result += value;
+				}
+				console.log(result);
+			}
+			// 定义一组函数,输入数字,逆转并输出汉字形式
+			function reverse () {
+				var num = window.prompt('input');
+				var str = '';
+				for(var i = num.length -1;i>=0;i--){
+					str += transfer(num[i]);
+				}
+				console.log(str);
+			}
+			function transfer (target) {
+				switch(target) {
+					case "1":
+						return "壹";
+					case "2":
+						return "俩";
+					case "3":
+						return "仨"
+				}
+			}
+			
+			// "||"优先级高于赋值符号
+			(window.foo || (window.foo = 'bar'));
+			console.log(window.foo)
+			
+			
+		</script>
+	</body>
+</html>

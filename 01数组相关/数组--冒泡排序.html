@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var arr = [1,5,8,4,3,69,7];
+			function bubSort (array) {
+				for (var i = 0;i<array.length-1;i++) {
+					for (var j=i+1;j<array.length;j++) {
+						//获取数组中的前一个值与后一个值进行比较
+						if(array[i]>array[j]){
+							var temp = array[i];
+							array[i] = array[j];
+							array[j] = temp;
+						}
+					}
+				}
+				return array;
+			}
+			arr = bubSort(arr);
+			console.log(arr)
+		</script>
+	</body>
+</html>

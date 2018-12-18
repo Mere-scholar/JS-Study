@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>立即执行函数</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			// 立即执行函数---函数执行完毕,立即释放
+			// 针对初始化功能的函数
+			// 语法  -- > (function (){}());
+			(function () {
+				var a = 123;
+				var b = 234;
+				console.log(a+b);
+			}());
+			// 带有参数的立即执行函数
+			(function (a,b,c){
+				console.log(a+b+c);
+			}(1,2,3));
+			
+			// 可以有返回值
+			var num = (function  (a,b,c) {
+				var d = a+b+c;
+				return d;
+			}(1,2,3));
+			// console.log(num);
+			
+			// 立即执行函数 
+				// (function (){}());	W3C标准
+				// (function (){})();
+			// 只有表达式才能被立即执行函数执行
+			// 能被执行符号执行的函数忽略表达式的名称
+			
+			
+			// 函数声明——function test() {}
+// 			function test () {
+// 				var a = 123;
+// 			}
+			// 函数表达式
+// 			var test = function  () {
+// 				console.log('a');
+// 			}();
+			// "+(正负号与！)" 将函数转为函数表达式
+// 			+ function test () {
+// 				console.log('a');
+// 			}();
+// 			(function (){
+// 				console.log('a');
+// 			})();
+			
+			function test (a,b,c,d) {
+				console.log(a+b+c+d);
+			}(1,2,3,4);
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

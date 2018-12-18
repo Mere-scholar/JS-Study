@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>特殊字符 “\”</title>
+</head>
+<body>
+    <script>
+        let str = 'abc ac15b bac bbc';
+        let str1 = 'abc acb* bac bbc';
+        //console.log(str.match(/\b/g));  //在字符前边加上 \ 之后字符不再表示原来的意思 ，“\b”表示边界符
+        // console.log(str1.match(/b\*/g));    //在特殊字符前边添加"\"则特殊字符不再表示原来的意思
+        // 使用new RegExp创建正则表达式的时候，如果使用“\”需要写两个“\\”
+        // let reg = new RegExp('\\d+','g')
+        // console.log(str.match(reg));
+
+        //  "\s"表示空白字符 "\S"表示非空白字符
+        // console.log(str1.match(/\s+/g));
+        // console.log(str1.match(/\S+/g));
+        // "\w" 表示匹配一个单字字符，匹配一个数字、字母、下划线 "\W"非单字字符
+        console.log(str1.match(/\w+/g));
+        console.log(str1.match(/\W+/g));
+    </script>
+</body>
+</html>

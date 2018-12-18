@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var arr=[1,6,1,2,2,1,3,1,3,4,5,6];
+// 			function arrDelLikeElement (array) {
+// 				const result = [];//定义一个空的数组,用来接受去重后的数组
+// 				const obj = {}; //
+// 				for(let i in array){
+// 					if(!obj[array[i]]){
+// 						result.push(array[i]);
+// 						obj[array[i]] = i;
+// 					}
+// 					
+// 				}
+// 				return result;
+// 			}
+// 			arr = arrDelLikeElement(arr);
+			// console.log(arr);
+// 
+// 			// 方法二：
+// 			function arrayDelLikeElement(array) {
+// 				//将传入的数组参数作为javascript中的创建一个Set(集合)对象的方法中的参数
+// 				var arrSet = new Set(array);
+// 				//定义一个空数组用来接收集合循环遍历的值
+// 				var arrEmpty = [];
+// 				for (const value of arrSet) {
+// 					arrEmpty.push(value);
+// 				}
+// 				array=arrEmpty;
+// 				return array
+// 			}
+// 			arrLike = arrayDelLikeElement(arr);
+// 			console.log(arrLike);
+
+			// 使用递归去重
+			// 第一步:将数组进行排序
+			arr = arr.sort(function(a,b){
+				return a-b
+			});
+			// 第二步编写递归函数
+			function mul (arr , i) {
+				if(i>=1){
+					if(arr[i] === arr[i-1]){
+						arr.splice(i,1);
+					}
+					mul(arr,(i-1));
+				}
+				return arr;
+			}
+			mul(arr , arr.length);
+			console.log(arr)
+			
+		</script>
+	</body>
+</html>

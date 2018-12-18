@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>预编译</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			// js执行步骤
+			// 语法分析
+			// 预编译
+			// 解释执行
+			
+			// 函数生命整体提升 , 变量 声明提升
+			// var a = 123 	//变量声明+赋值
+			
+			// 预编译
+			// 1) imply global -->暗示全局变量,如果变量未经声明就赋值,此变量就为全局变量所有
+				//a = 10;
+			// 2) 一切声明的全局变量,全是window的属性
+				// var b = 10;
+			// window 就是全局的域
+			// window 就是全局  var a = 123; console.log(a) --> console.log(window.a);
+			
+// 			function test () {
+// 				var a = b = 123;
+// 			}
+// 			test();
+
+			// 预编译过程(局部)--->发生在函数执行的前一刻
+			// 1.创建AO对象(Activation Object) -->(执行期上下文)
+			// 2.找出函数中的形参与实参
+			// 3.将形参与实参统一
+			// 4.找出函数体的函数声明,将值赋给函数体 
+// 			function fn (a) {
+// 				console.log(a);
+// 				
+// 				var a = 123;
+// 				console.log(a);
+// 
+// 				function a () {}
+// 				console.log(a);
+// 
+// 				var b = function () {}
+// 				console.log(b);
+// 
+// 				function d () {}
+// 			}
+// 			fn(1);
+			
+			// 全局变量声明GO对象
+			// 没有实参与形参统一的过程
+			// GO === window
+// 			console.log(a+"GO");
+// 			var a = 123;
+// 			function a () {
+// 				
+// 			}
+
+
+			//先生成GO在生成AO
+			// 嵌套关系,就近原则
+// 			GO{
+// 				global:undefined,
+// 				fn:function(){}
+// 			}
+// 			var global = 100;
+// 			function fn () {
+// 				var global = 200;
+// 				console.log(global);
+// 			}
+// 			fn();
+// 			AO{
+// 				
+// 			}
+
+			// 进阶
+			
+// 			global = 100;
+// 			function fn () {
+// 				console.log(global); //undefined
+// 				global = 200;
+// 				console.log(global); //200
+// 				var global = 300;
+// 			}
+// 			fn();
+// 			var global;
+			
+// 			function test () {
+// 				console.log(b);
+// 				if(a){
+// 					var b = 100;
+// 				}
+// 				c = 234;
+// 				console.log(c);
+// 			}
+// 			var a;
+// 			test();
+// 			a = 10;
+// 			console.log(c);
+
+// 			function bar(){
+// 				return foo;
+// 				foo = 100;
+// 				function foo () {
+// 					
+// 				}
+// 				var foo = 11;
+// 			}
+// 			console.log(bar()); //---->function foo(){}
+
+// 			console.log(bar()); //---->11
+// 			function bar(){
+// 				foo = 100;
+// 				function foo(){
+// 					
+// 				}
+// 				var foo = 11;
+// 				return foo;
+// 			}
+
+			// 题
+			a=100;
+			function demo (e) {
+				function e () {
+					
+				}
+				arguments[0]=2;
+				console.log(e);
+				if(a){
+					var b = 123;
+					function c () {
+						
+					}
+				}
+				var c;
+				a=10;
+				var a;
+				console.log(b);
+				f = 123;
+				console.log(c);
+				console.log(a);
+			}
+			var a;
+			demo(1);
+			console.log(a);
+			console.log(f);
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let str = 'aabc abc accb';
+
+    let reg = new RegExp('ab*c','g');
+    console.log(reg.exec(str));
+    console.log(reg.exec(str));
+    console.log(reg.exec(str));
+    console.log(reg.exec(str));
+
+    // let reg = new RegExp('a(b*)c');
+    // console.log(reg.exec(str))
+
+    console.log(reg.test(str));
+    //str.match()方法
+    let str1 = 'aab abc abbc';
+    console.log(str1.match(/a*bc/g));
+
+    console.log(str1.search(/ab/));
+    console.log(str1.replace(/a/g,'x'));
+    console.log(str1.split(/\s+/g,2))
+</script>
+</html>

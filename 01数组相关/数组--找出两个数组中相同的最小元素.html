@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+				const a = [1, 2, 5, 9, 10]
+				const b = [3, 4, 2, 9, 10]
+			function minLikeElemet(a,b){
+				let i=j=0;
+				while(i<a.length || j<b.length){
+					if(a[i] === b[j]){
+						return a[i]
+					}else if(a[i] > b[j]){
+						j++;
+					}else if(a[i] < b[j]){
+						i++;
+					}
+				}
+				return null;
+			}
+			console.log(minLikeElemet(a,b))
+		</script>
+	</body>
+</html>

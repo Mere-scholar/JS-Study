@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>创建一个兼容的XMLHttpRequest对象</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function getXMLHttpRequest(){
+        var xhr = false;
+        if(window.XMLHttpRequest){
+            xhr = new XMLHttpRequest();
+        }else if(window.ActiveXObject){
+            xhr = new ActiveXObject("Microsoft.XMLHTTP")
+        }
+        return xhr;
+    }
+    console.log(getXMLHttpRequest());
+</script>
+</html>

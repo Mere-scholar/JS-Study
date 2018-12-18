@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../jquery-3.3.1.js"></script>
+</head>
+
+<body>
+    <h1>load方法，通过ajax请求从服务器加载数据，并把返回数据放置到指定的元素中去</h1>
+    <button>jQuery中的load方法</button>
+    <div class="loadF"></div>
+    <script>
+        document.querySelector('button').addEventListener("click", getJsonValues);
+        //load方法，通过ajax请求从服务器加载数据，并把返回数据放置到指定的元素中去
+        // function getJsonValues(){
+        //     $(".loadF").load('text.text',"你好");
+        // }
+        // $.get()方法
+        // function getJsonValues(){
+        //     $.get('text.text',function(data , status){
+        //         $('.loadF').html(data);
+        //         alert(status);
+        //     })
+        // }
+        // $.post()方法
+        function getJsonValues(){
+            $.post('text.text' , function(data , status){
+                $('.loadF').html(data);
+                alert(status);
+            })
+        }
+    </script>
+</body>
+
+</html>

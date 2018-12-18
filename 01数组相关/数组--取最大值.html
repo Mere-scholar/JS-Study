@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var arr =[5,8,10,111,55,891245,45,9,4,3,1];
+			function max (arr) {
+				var num = 0;
+				for(var i = 0;i<arr.length;i++){
+					if(num < arr[i]){
+						num = arr[i]
+					}
+				}
+				return num;
+			}
+			console.log(max(arr));
+		</script>
+	</body>
+</html>

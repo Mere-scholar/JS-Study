@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			// [[scope]] -->作用域,其实储存了运行期上下文的集合
+			// [[scope]] 隐式的,不能够被调用
+			function c () {
+				function b () {
+					function c(){
+						
+					}
+					c();
+				}
+				b();
+			}
+			c();
+			
+			// 执行步骤
+			// c dinfined c.[[scope]] --> GO
+			// c doing c.[[scope]]    --> 0 : cAO
+			//							  1 : GO
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

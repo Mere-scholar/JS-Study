@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+// 			var num = new Number('123');
+// 			num.abc = "a";
+// 			// Number String Slooean可以设置属性
+// 			// undeifined与null不可以
+// 			var str = "abcd";
+// 			str.abc = 'a';
+
+			// 包装类
+// 			var num = 4;
+// 			num.len = 3;
+// 			// new Number(4).len = 3; ----> 赋值时，然后delete
+// 			// new Number(4).len --->取值时
+// 			// =======================>
+// 			var arr = [1,2,3,4,5];
+// 			
+// 			var str = "abcd";
+// 			str.length = 2;
+			
+// 			var str = "abc";
+// 			str += 1;
+// 			var test = typeof(str);
+// 			if (test.length == 6) {
+// 				test.sign = "typeof的返回值可能是string"
+// 			}
+// 			document.write(test.sign);
+			
+// 			function test (a ,b) {
+// 				this.a = "111",
+// 				this.b = '222'
+// 			}
+// 			var abc = new test("a","b");
+
+// 			function Person (name , age ,sex) {
+// 				var a = 0;
+// 				this.name = name;
+// 				this.age = age;
+// 				this.sex = sex;
+// 				function sss () {
+// 					a ++; //a = a+1
+// 					console.log(a);
+// 				}
+// 				this.say = sss;
+// 			}
+// 			var oPerson = new Person();
+// 			oPerson.say();
+// 			oPerson.say();
+// 			var oPerson1 = new Person();
+// 			oPerson1.say(); 
+
+// 			var x = 1;
+// 			function add (n) {
+// 				return n = n+1;
+// 			}
+// 			y = add(x);
+// 			function add (n) {
+// 				return n = n+3;
+// 			}
+// 			z = add(x);
+
+			// 写一个方法判断字符串的长度 中文两个字节,英文一个字节
+			// 0-65535
+			// charCodeAt()方法可返回指定位置的Unicode编码
+			// 返回值是<=255时,为英文;返回值>255时为中文
+			// var str = 'abcd - —— ￥e';
+			var str = '你好-';
+			function strLength (str) {
+				var num = 0;
+				for(var i = 0;i<str.length;i++){
+					// str.charAt(i) ---> 获取字符串中的每一个字符
+					// charCodeAt() -->获取编码数
+					var step = str.charCodeAt(i);
+					if(step > 225){
+						num = num + 2;
+					}else if(step <= 255){
+						num = num + 1;
+					}
+				}
+				return num;
+			}
+			var num = strLength(str);
+			
+		</script>
+	</body>
+</html>

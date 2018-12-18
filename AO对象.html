@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			// 1.创建一个AO对象
+			// 2.找出所有的形参与实参,赋值为undefine
+			// 3.将型参与实参统一
+			// 4.在函数题里找函数声明,值赋予函数题
+// 			function  test(a) {
+// 				// var a = 5;
+// 				// let a = 4; ////报错
+// 				var a = 4;
+// 				alert(a);
+// 			}
+// 			test(5);
+			var tt = 'aa';
+			function test (a,b) {
+				var a = 4;
+				var a = function test1(b) {
+					console.log(tt+"1=========");
+					var b = 5;
+					var tt = "dd";
+					console.log(tt+"2=========");
+					console.log(b+"3=========");
+				}
+				console.log(a+"=4========");
+				console.log(b+"=5=====555===");
+			}
+			test(5,4);
+		</script>
+	</body>
+</html>

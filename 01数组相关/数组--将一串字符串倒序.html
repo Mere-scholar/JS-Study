@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		var str = 'abc123';
+		console.log(str.split(""));
+		console.log(str.split("").reverse());
+		console.log(str.split('').reverse().join(''));
+		console.log("=====================");
+		
+//		var arr = [1,[2,["3",[4],],"abc"],5];
+		//直接使用数组的方法进行解答
+//		var arrStr = arr.join();
+//		arrStr = arrStr.split(',');
+//		console.log(arrStr);
+		//使用递归函数编写上述的代码
+//		console.log(Array.isArray(arr[1]));
+		var arr = [1,[2,["3","def"],"abc"],5];
+		function arrayFun(arr) {
+			for (let i in arr) {
+				if(Array.isArray(arr[i])){
+					arr.splice(i,1,...arrayFun(arr[i]));
+				}
+			}
+			return arr;
+		}
+		arrayFun(arr);
+		console.log(arr);
+		
+		//es6结构运算符
+		
+		
+		const array1 = [1,2,3];
+		function arrayFun1 (a,b,c) {
+			console.log(a);
+			console.log(b);
+			console.log(c);
+		}
+		arrayFun1(...array1);
+		var str1 = 'love';
+		console.log([...str1]);
+		var [a , b,c,d] = str1;
+		console.log(a);
+		console.log(b);
+		console.log(c);
+		console.log(d);
+		//总结
+		//拓展运算符用三个点号表示，将数组或者数组对象展开成一系列用逗号隔开的值
+		var arr3 = [1,2,3];
+		var arr4 = [...arr3,5,6,7];
+		console.log(arr4);
+		var arr5 = [{a:1},{b:2},{c:3}];
+		console.log(...arr5);
+		var str3 = 'love';
+		console.log([...str3]);
+		var arr8 = [1,2,3,4];
+		console.log(...arr8)
+	</script>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+		<script type="text/javascript">
+			// 闭包触发
+// 			function test () {
+// 				var arr = [];
+// 				for (var i =0;i<10;i++) {
+// 					arr[i] = function () {
+// 						console.log(i + "")
+// 					}
+// 				}
+// 				return arr;
+// 			}
+// 			var myArr = test();
+// 			console.log(myArr);
+// 			for (var j = 0;j<10;j++) {
+// 				myArr[j]();
+// 			} 
+			// 解决闭包---使用立即执行函数
+			// 10-1 ====> 10-10
+// 			function test () {
+// 				var arr = [];
+// 				for (var i =0;i<10;i++) {
+// 					(function (j) {
+// 						arr[j] = function () {
+// 							console.log(j + "");
+// 						}
+// 					}(i))
+// 				}
+// 				return arr;
+// 			}
+// 			var myArr = test();
+// 			console.log(myArr);
+// 			for (var j = 0;j<10;j++) {
+// 				myArr[j]();
+// 			} 
+			// 闭包二————————>
+// 			function test () {
+// 				var li_v = document.querySelectorAll("li");
+// 				for (var i = 0;i<li_v.length;i++) {
+// 					(function (j) {
+// 						li_v[j].addEventListener("click",function () {
+// 							console.log(j);
+// 						})
+// 					}(i));
+// 				}
+// 			}
+// 			test()
+			// 未经声明的对象只有放在typeof中不会报错--undefined 
+			var x = 1;
+			if(function f(){}){
+				x += typeof f;
+			}
+			console.log(x);
+			console.log(typeof x)
+		</script>
+	</body>
+</html>

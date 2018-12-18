@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>正则表达式与传统的方法找出字符串中的数据</title>
+</head>
+<body>
+    <script>
+        let str = "aa15 dc56 es15 88 9 15";
+        //使用传统的方法找出字符串中的数字
+        // let getResult = [];
+        // let tempStr = '';
+        // for(let i=0;i<str.length;i++){
+        //     if(str.charAt(i) >= '0' && str.charAt(i) <= '9'){
+        //         tempStr += str.charAt(i);
+        //     }else{
+        //         if(tempStr !== ''){
+        //             getResult.push(tempStr);
+        //             tempStr = '';
+        //         }
+        //     }
+        // } 
+        // if(tempStr !== ''){
+        //     getResult.push(tempStr);
+        //     tempStr = '';
+        // }
+        // document.write(getResult);
+        // 使用正则表达式的写法
+        // document.write(str.match(/\d+/g));
+        // 使用创建对象的方式创建正则表达式
+        let reg = new RegExp('\\d+','g')
+        document.write(str.match(reg));
+
+        
+    </script>
+</body>
+</html>

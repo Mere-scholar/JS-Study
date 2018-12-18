@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>原型的简单了解</title>
+	</head>
+	<body>
+		
+	</body>
+	<script type="text/javascript">
+// 		Car.prototype = {
+// 			carName:'BWM',
+// 			carLang:'4900',
+// 			carHeight:'1400'
+// 		}
+		function Car (onwer , carColor) {
+			this.onwer = onwer;
+			this.carColor = carColor;
+		}
+		var car = new Car('han','red');
+	</script>
+	<!-- <script type="text/javascript">
+			Person.prototype.name = "茜";
+			function Person () {
+				
+			}
+			// Person.prototype.name = "七";
+			Person.prototype = {
+				name:"qi"  //person.name=qi
+			}
+			var person = new Person();
+	// 		Person.prototype = {
+	// 			name:"qi"  //person.name="茜"
+	// 		}
+			
+			
+	// 		Person.prototype.name = '小明';
+	// 		function Person () {
+	// // 			var this = {
+	// // 				__proto__ : obj
+	// // 			}
+	// // __proto__  可更改的,指向它的原型的位置
+	// 			this.__proto__ = obj
+	// 		}
+	// 		var obj = {
+	// 			name:'小刚'
+	// 		}
+	// 		var person = new Person();
+		</script> -->
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>特殊字符，函数相关</title>
+</head>
+<body>
+    <script>
+        // let str = 'fred fredfred';
+        // console.log(str.match(/(fred)+/));
+        
+        // let str = 'abc bac abc bac';
+        // console.log(str.match(/(abc) (bac) \1 \2/));
+
+
+        let str = 'fred fredfred';
+        let reg = new RegExp(/(fred)+/,'g') 
+        console.log(reg.exec(reg));
+    </script>
+</body>
+</html>

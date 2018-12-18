@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>特殊字符2 开始“^” 结束"$" 换行以外的任意字符"."</title>
+</head>
+<body>
+    <textarea id="td1"></textarea>
+    <button id="btn1">按钮</button>
+    <script>
+        let str = 'abc acb aacds cbdx';
+        console.log(str.match(/^a/g));  //匹配输入的开始
+        console.log(str.match(/x$/g));  //匹配输入的结束
+        console.log(str.match(/a.c/g)); //匹配换行以外的任意一个字符
+        
+        // 匹配多行的字符串  使用img中的 m 多行匹配
+        let oT = document.querySelector('#td1');
+        let oBtn = document.querySelector('#btn1');
+        oBtn.onclick = ()=>{
+            let str1 = oT.value;
+            //  ^ 也可用于多行文本的匹配，表示换行的开始部分
+            // console.log(str1.match(/^hello+/gm));
+
+            console.log(str1.match(/hello$/gm))
+        }
+    </script>
+</body>
+</html>

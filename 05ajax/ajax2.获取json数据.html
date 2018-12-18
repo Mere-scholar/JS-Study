@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ajax - 2 请求json数据</title>
+</head>
+<body>
+    <button class="btn1">ajax请求单个数据</button>
+    <button class="btn2">ajax请求多个数据</button>
+    <h1>获取的单个json数据</h1>
+    <div class="getJson"></div>
+    <h1>获取的多个json数据</h1>
+    <div class="getJsons"></div>
+    <script>
+        // 获取单个数据的JSON数据
+        document.querySelector('.btn1').addEventListener("click" , getJsonValue);
+        function getJsonValue(){
+            // 创建一个xml对象
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET' ,'user.json' , true);
+            xhr.onload = function(){
+                var user = JSON.parse(this.responseText);
+                if(this.status == 200){
+                    var data = '';
+                    data += `<ul><li>${user.name}</li><li>${user.age}</li><li>${user.id}</li></ul>`;
+                    document.querySelector('.getJson').innerHTML = data;
+                }
+            }
+            xhr.send(); 
+        }
+        
+        // 获取多个数据的JSON的数据
+        document.querySelector('.btn2').addEventListener("click" , getJsonValues);
+        function getJsonValues(){
+            //创建一个xml对象
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET' ,'users.json' , true);
+            xhr.onload = function(){
+                // 解析json的两种方式
+                // var users = JSON.parse(this.responseText);
+                var users = eval("("+this.responseText+")");
+                if(this.status == 200){
+                    var data = '';
+                    for (const i in users) {
+                        data += `<ul><li>${users[i].name}</li><li>${users[i].age}</li><li>${users[i].id}</li></ul>`;
+                    }
+                }
+                document.querySelector('.getJsons').innerHTML = data;
+            }
+            xhr.send();
+        }
+    </script>
+</body>
+</html>
