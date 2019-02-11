@@ -84,7 +84,19 @@
 // 			demo(); //101
 // 			demo(); //102
 			
-			
+			for(let i=0;i<4;i++){
+			  setTimeout(function(){
+			    console.log(i)
+          // 0,1,2,3
+			  },i*100)
+			}
+      
+      for(var i=0;i<4;i++){
+        setTimeout(function(){
+          console.log(i)
+          // 4,4,4,4
+        },i*100)
+      }
 			
 		</script>
 	</body>
