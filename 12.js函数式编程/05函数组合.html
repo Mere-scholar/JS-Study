@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>函数组合</title>
+</head>
+<body>
+
+</body>
+<script>
+  let str = '1234567'
+  let sum = function (str) { // 字符串加1操作
+    let arr = str.split('').map((a) => {
+      return a * 1 + 1
+    })
+    return arr.join('')
+  }
+  console.log(sum(str))
+</script>
+</html>
